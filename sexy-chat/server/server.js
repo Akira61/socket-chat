@@ -9,14 +9,16 @@ const io = server(http, {
 
 
 //when the client open the website it will call '/' and send the html file.
-
+app.use(express.static('client'));
+// another way:
+/*
 app.get('/',(req,res) =>{
 
             //    --------------------------------------------------------------
     res.sendFile('--------------------------source folder-----------------------'               + '/client' + '/index.html');
             //    --------------------------------------------------------------
 });
-
+*/
 
 io.on('connection', (socket) =>{
     console.log("[new user connected]");
